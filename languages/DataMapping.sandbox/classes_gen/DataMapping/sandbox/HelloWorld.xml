@@ -1,0 +1,35 @@
+<?xml version = "1.0"?>
+<DataMapping>  
+  <FileEncoding>IBM_852</FileEncoding>
+  <FormatList>    
+    <FillChar value=" " />
+  </FormatList>
+  <ParamDef>    
+    <Parameter name="Név" type="StringType" caption="Kérem adja meg a nevét" dictionaryId="" />
+  </ParamDef>
+  <SourceDefList>    
+    <SourceDef name="Nincs">      
+      <OrderBy></OrderBy>
+    </SourceDef>
+  </SourceDefList>
+  <FilterDef></FilterDef>
+  <MappingDefList>    
+    <ParameterMappingDef name="Hello">      
+      <ValueDef name="Név">        
+        <ParamValue name="Név" />
+        <FormatList></FormatList>
+      </ValueDef>
+    </ParameterMappingDef>
+  </MappingDefList>
+  <Renderings>    
+    <TXTRenderingDef>      
+      <Filename value="helloworld" />
+      <HeaderType value="name" />
+      <CustomHeader value="" />
+      <EOF value="false" />
+      <MappingDefs>        
+        <MappingDefRef name="Hello" />
+      </MappingDefs>
+    </TXTRenderingDef>
+  </Renderings>
+</DataMapping>

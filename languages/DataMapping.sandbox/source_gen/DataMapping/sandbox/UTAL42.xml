@@ -1,0 +1,46 @@
+<?xml version = "1.0"?>
+<DataMapping>  
+  <FileEncoding>IBM_852</FileEncoding>
+  <FormatList>    
+    <FillChar value=" " />
+  </FormatList>
+  <ParamDef>    
+    <Parameter name="NXN_UtalasAzonosito" type="StringType" caption="GUID" dictionaryId="" />
+  </ParamDef>
+  <SourceDefList>    
+    <SourceDef name="Tetel">      
+      <EntityRef entity="Utalas" alias="u" joinType="Inner">        
+        <Condition operator="equal">          
+          <LeftSide>            
+            <AttributeRef sourceAlias="u" attribute="Azonosito" />
+          </LeftSide>
+          <RightSide>            
+            <ParamValue name="NXN_UtalasAzonosito" />
+          </RightSide>
+        </Condition>
+      </EntityRef>
+      <EntityRef entity="UtalasTetel" alias="ut" joinType="Inner">        
+        <Condition operator="equal">          
+          <LeftSide>            
+            <AttributeRef sourceAlias="ut" attribute="UtalasAzonosito" />
+          </LeftSide>
+          <RightSide>            
+            <AttributeRef sourceAlias="u" attribute="Azonosito" />
+          </RightSide>
+        </Condition>
+        <Condition operator="greater">          
+          <LeftSide>            
+            <AttributeRef sourceAlias="ut" attribute="Osszeg" />
+          </LeftSide>
+          <RightSide>            
+            <NumericLiteral value="0" />
+          </RightSide>
+        </Condition>
+      </EntityRef>
+      <OrderBy></OrderBy>
+    </SourceDef>
+  </SourceDefList>
+  <FilterDef></FilterDef>
+  <MappingDefList></MappingDefList>
+  <Renderings></Renderings>
+</DataMapping>
